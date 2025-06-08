@@ -43,10 +43,10 @@
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <div id="weather-image"></div>
+        <img src="./images/FUNFACT.png" alt="Image of a light bulb with the words 'FUN FACT' on top of it." />
       </div>
       <div class=" page-content-php">
-        <div id="weather">
+        <div id="randomFact">
 
           <?php
           try {
