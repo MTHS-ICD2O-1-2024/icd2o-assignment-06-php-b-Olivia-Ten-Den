@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Today's Weather, in PHP" />
+  <meta name="description" content="A Random Useless Fact, in PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Olivia TD" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +30,7 @@
     sizes="16x16"
     href="./favicon-16x16.png" />
   <link rel="manifest" href="./site.webmanifest" />
-  <title>Today's Weather, in PHP</title>
+  <title>A Random Useless Fact, in PHP</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Today's Weather, in PHP</span>
+        <span class="mdl-layout-title">A Random Useless Fact, in PHP</span>
       </div>
     </header>
     <main class="mdl-layout__content">
@@ -48,16 +48,6 @@
       <div class=" page-content-php">
         <div id="weather">
 
-          <!--
-          const weatherJSON = await fetch(
-          "https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5"
-          )
-          const jsonWeatherData = await weatherJSON.json()
-          const icon = jsonWeatherData.weather[0].icon
-          const kelvinTemperature = jsonWeatherData.main.temp
-          const celsuisTemperature = kelvinTemperature - 273.15
-          const celsuisTemperatureRounded = Math.round(celsuisTemperature)
-          -->
           <?php
           try {
             $weatherJSON = "https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5";
@@ -70,8 +60,7 @@
             $celsuisTemperatureRounded = round($celsuisTemperature);
             echo "<img src = $iconImage >";
             echo "<p> The current temperature is " . $celsuisTemperatureRounded . " °C.</p>";
-          }
-          catch (error) {
+          } catch (error) {
             "<p> The weather information source is not working at this moment. </p>";
           }
           ?>
