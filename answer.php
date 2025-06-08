@@ -50,18 +50,13 @@
 
           <?php
           try {
-            $weatherJSON = "https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5";
-            $jsonWeatherData = file_get_contents($weatherJSON);
-            $phpWeatherData = json_decode($jsonWeatherData);
-            $icon = $phpWeatherData->weather[0]->icon;
-            $iconImage = "https://openweathermap.org/img/wn/" . $icon . "@2x.png";
-            $kelvinTemperature = $phpWeatherData->main->temp;
-            $celsuisTemperature = $kelvinTemperature - 273.15;
-            $celsuisTemperatureRounded = round($celsuisTemperature);
-            echo "<img src = $iconImage >";
-            echo "<p> The current temperature is " . $celsuisTemperatureRounded . " °C.</p>";
+            $factsJSON = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en";
+            $jsonRandomFact = file_get_contents($factsJSON);
+            $randomFact = json_decode($jsonRandomFact);
+            $funFact = $randomFact->text;
+            echo "<h4> Your random fact is: </h4><h4>" . $funFact . " </h4>";
           } catch (error) {
-            "<p> The weather information source is not working at this moment. </p>";
+            "<p> Sorry, the information source for these Fun Facts is not working at this moment. Try again later. </p>";
           }
           ?>
 
